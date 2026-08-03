@@ -117,7 +117,7 @@ class WYSIWYGRenderer(private val layout: JSONArray, private val order: JSONObje
                 val regularName = familyConfig.getJSONObject("regular").getString("truetype")
                 val boldName = if (familyConfig.has("bold")) familyConfig.getJSONObject("bold").getString("truetype") else regularName
                 val italicName = if (familyConfig.has("italic")) familyConfig.getJSONObject("italic").getString("truetype") else regularName
-                val boldItalicName = if (familyConfig.has("bolditalic")) familyConfig.getJSONObject("bolditalic").getString("truetype") else regularName
+                val boldItalicName = if (familyConfig.has("bolditalic")) familyConfig.getJSONObject("bolditalic").getString("truetype") else boldName
                 registerFontFamily(ctx, family, "fonts/%s", regularName, boldName, boldItalicName, italicName)
             }
         }
